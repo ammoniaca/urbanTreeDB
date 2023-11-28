@@ -4,10 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class UrbanTreeDbApplication {
+public class UrbanTreeDBApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UrbanTreeDbApplication.class, args);
+
+		SpringApplication.run(UrbanTreeDBApplication.class, args);
 	}
 
 }
