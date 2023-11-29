@@ -8,7 +8,7 @@ import org.cnr.urbantreedb.enums.HabitEnum;
 
 @Entity
 @Table(name = "appearance")
-public class TreeAppearance {
+public class TreeAppearanceEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

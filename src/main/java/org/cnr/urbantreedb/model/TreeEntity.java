@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "trees")
-public class Tree {
+public class TreeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
