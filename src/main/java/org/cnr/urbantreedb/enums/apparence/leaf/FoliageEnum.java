@@ -1,4 +1,4 @@
-package org.cnr.urbantreedb.enums.leaf;
+package org.cnr.urbantreedb.enums.apparence.leaf;
 
 public enum FoliageEnum {
 

@@ -1,13 +1,13 @@
-package org.cnr.urbantreedb.model;
+package org.cnr.urbantreedb.model.apparence;
 
 import jakarta.persistence.*;
-import org.cnr.urbantreedb.enums.leaf.LeafAutumnColoringEnum;
-import org.cnr.urbantreedb.enums.leaf.FoliageEnum;
-import org.cnr.urbantreedb.enums.leaf.LeafShapeEnum;
+import org.cnr.urbantreedb.enums.apparence.leaf.LeafAutumnColoringEnum;
+import org.cnr.urbantreedb.enums.apparence.leaf.FoliageEnum;
+import org.cnr.urbantreedb.enums.apparence.leaf.LeafShapeEnum;
 
 @Entity
 @Table(name = "leaf")
-public class TreeLeafEntity {
+public class LeafEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

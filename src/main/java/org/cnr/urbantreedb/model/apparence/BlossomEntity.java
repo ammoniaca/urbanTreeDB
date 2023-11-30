@@ -1,12 +1,12 @@
-package org.cnr.urbantreedb.model;
+package org.cnr.urbantreedb.model.apparence;
 
 import jakarta.persistence.*;
-import org.cnr.urbantreedb.enums.blossom.BlossomColorEnum;
-import org.cnr.urbantreedb.enums.blossom.BlossomPeriodEnum;
+import org.cnr.urbantreedb.enums.apparence.blossom.BlossomColorEnum;
+import org.cnr.urbantreedb.enums.apparence.blossom.BlossomPeriodEnum;
 
 @Entity
 @Table(name = "blossom")
-public class TreeBlossomEntity {
+public class BlossomEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

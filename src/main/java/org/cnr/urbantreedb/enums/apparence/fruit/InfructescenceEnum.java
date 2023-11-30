@@ -1,4 +1,4 @@
-package org.cnr.urbantreedb.enums.fruit;
+package org.cnr.urbantreedb.enums.apparence.fruit;
 
 public enum InfructescenceEnum {
 

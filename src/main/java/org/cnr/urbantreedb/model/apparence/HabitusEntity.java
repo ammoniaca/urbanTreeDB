@@ -1,14 +1,14 @@
-package org.cnr.urbantreedb.model;
+package org.cnr.urbantreedb.model.apparence;
 
 import jakarta.persistence.*;
-import org.cnr.urbantreedb.enums.habitus.CrownShapeEnum;
-import org.cnr.urbantreedb.enums.habitus.CrownTransparencyEnum;
-import org.cnr.urbantreedb.enums.habitus.GrowthDirectionEnum;
-import org.cnr.urbantreedb.enums.habitus.HabitEnum;
+import org.cnr.urbantreedb.enums.apparence.habitus.CrownShapeEnum;
+import org.cnr.urbantreedb.enums.apparence.habitus.CrownTransparencyEnum;
+import org.cnr.urbantreedb.enums.apparence.habitus.GrowthDirectionEnum;
+import org.cnr.urbantreedb.enums.apparence.habitus.HabitEnum;
 
 @Entity
 @Table(name = "habitus")
-public class TreeHabitusEntity {
+public class HabitusEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

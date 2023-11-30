@@ -1,4 +1,4 @@
-package org.cnr.urbantreedb.enums.blossom;
+package org.cnr.urbantreedb.enums.apparence.blossom;
 
 public enum BlossomPeriodEnum {
 

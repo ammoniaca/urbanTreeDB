@@ -1,4 +1,4 @@
-package org.cnr.urbantreedb.enums.habitus;
+package org.cnr.urbantreedb.enums.apparence.habitus;
 
 public enum GrowthDirectionEnum {
 
