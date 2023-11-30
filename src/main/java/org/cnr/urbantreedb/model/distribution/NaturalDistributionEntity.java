@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import org.cnr.urbantreedb.enums.distribution.OriginEnum;
 
 @Entity
-@Table(name = "natural_distribution")
+@Table(name = "distribution")
 public class NaturalDistributionEntity {
 
     @Id

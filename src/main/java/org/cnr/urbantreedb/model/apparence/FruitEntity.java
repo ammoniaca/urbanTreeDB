@@ -5,6 +5,7 @@ import org.cnr.urbantreedb.enums.apparence.fruit.FruitColorEnum;
 import org.cnr.urbantreedb.enums.apparence.fruit.InfructescenceEnum;
 
 @Entity
+@Table(name = "fruit")
 public class FruitEntity {
 
     @Id
