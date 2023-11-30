@@ -1,4 +1,4 @@
-package org.cnr.urbantreedb.enums;
+package org.cnr.urbantreedb.enums.habitus;
 
 public enum CrownTransparencyEnum {
 

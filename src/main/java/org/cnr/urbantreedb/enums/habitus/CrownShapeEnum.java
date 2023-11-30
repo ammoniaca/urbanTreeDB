@@ -1,4 +1,4 @@
-package org.cnr.urbantreedb.enums;
+package org.cnr.urbantreedb.enums.habitus;
 
 public enum CrownShapeEnum {
 
@@ -23,6 +23,7 @@ public enum CrownShapeEnum {
     public final String label;
 
     private CrownShapeEnum(String label) {
+
         this.label = label;
     }
 

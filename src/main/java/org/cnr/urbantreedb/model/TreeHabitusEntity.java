@@ -1,19 +1,19 @@
 package org.cnr.urbantreedb.model;
 
 import jakarta.persistence.*;
-import org.cnr.urbantreedb.enums.CrownShapeEnum;
-import org.cnr.urbantreedb.enums.CrownTransparencyEnum;
-import org.cnr.urbantreedb.enums.GrowthDirectionEnum;
-import org.cnr.urbantreedb.enums.HabitEnum;
+import org.cnr.urbantreedb.enums.habitus.CrownShapeEnum;
+import org.cnr.urbantreedb.enums.habitus.CrownTransparencyEnum;
+import org.cnr.urbantreedb.enums.habitus.GrowthDirectionEnum;
+import org.cnr.urbantreedb.enums.habitus.HabitEnum;
 
 @Entity
-@Table(name = "appearance")
-public class TreeAppearanceEntity {
+@Table(name = "habitus")
+public class TreeHabitusEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
-    private Long AppearanceId;
+    private Long appearanceId;
 
     @Column(name="habit")
     private HabitEnum habit;
@@ -47,6 +47,10 @@ public class TreeAppearanceEntity {
 
     @Column(name = "basal_shoot")
     private boolean basalShoot;
+
+    @Column(name = "near_surface_root")
+    private boolean nearSurfaceRoot;
+
 
 
 

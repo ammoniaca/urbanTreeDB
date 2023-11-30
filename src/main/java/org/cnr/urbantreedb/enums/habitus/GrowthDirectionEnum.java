@@ -1,4 +1,4 @@
-package org.cnr.urbantreedb.enums;
+package org.cnr.urbantreedb.enums.habitus;
 
 public enum GrowthDirectionEnum {
 
@@ -14,6 +14,7 @@ public enum GrowthDirectionEnum {
     public final String label;
 
     private GrowthDirectionEnum(String label) {
+
         this.label = label;
     }
 
