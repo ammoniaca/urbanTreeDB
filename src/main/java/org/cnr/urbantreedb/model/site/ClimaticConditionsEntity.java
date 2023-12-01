@@ -1,10 +1,10 @@
-package org.cnr.urbantreedb.model.sitecharacteristic;
+package org.cnr.urbantreedb.model.site;
 
 import jakarta.persistence.*;
-import org.cnr.urbantreedb.enums.sitecharacteristic.climate.DroughtToleranceEnum;
-import org.cnr.urbantreedb.enums.sitecharacteristic.climate.HeatToleranceEnum;
-import org.cnr.urbantreedb.enums.sitecharacteristic.climate.LateFrostToleranceEnum;
-import org.cnr.urbantreedb.enums.sitecharacteristic.climate.LightRequirementEnum;
+import org.cnr.urbantreedb.enums.site.climate.DroughtToleranceEnum;
+import org.cnr.urbantreedb.enums.site.climate.HeatToleranceEnum;
+import org.cnr.urbantreedb.enums.site.climate.LateFrostToleranceEnum;
+import org.cnr.urbantreedb.enums.site.climate.LightRequirementEnum;
 
 @Entity
 public class ClimaticConditionsEntity {

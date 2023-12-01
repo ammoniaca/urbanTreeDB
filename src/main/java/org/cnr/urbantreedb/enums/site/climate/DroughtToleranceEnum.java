@@ -1,7 +1,6 @@
-package org.cnr.urbantreedb.enums.sitecharacteristic.soil;
+package org.cnr.urbantreedb.enums.site.climate;
 
-public enum SaltToleranceEnum {
-
+public enum DroughtToleranceEnum {
 
     VERY_HIGH(6),
     HIGH(5),
@@ -13,11 +12,10 @@ public enum SaltToleranceEnum {
 
     public final int label;
 
-    private SaltToleranceEnum(int label) {
+    private DroughtToleranceEnum(int label) {
 
         this.label = label;
     }
-
 
 
 }

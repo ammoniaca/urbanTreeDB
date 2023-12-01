@@ -1,6 +1,6 @@
-package org.cnr.urbantreedb.enums.sitecharacteristic.soil;
+package org.cnr.urbantreedb.enums.site.soil;
 
-public enum SoilDepthEnum {
+public enum SoilDepthCategoryEnum {
 
     SHALLOW("shallow"), // (-inf, 1 m)
     MEAN("mean"), // [1 m, 3 m)
@@ -8,7 +8,7 @@ public enum SoilDepthEnum {
 
     public final String label;
 
-    private SoilDepthEnum(String label) {
+    private SoilDepthCategoryEnum(String label) {
 
         this.label = label;
     }

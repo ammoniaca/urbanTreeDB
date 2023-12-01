@@ -1,4 +1,4 @@
-package org.cnr.urbantreedb.enums.sitecharacteristic.climate;
+package org.cnr.urbantreedb.enums.site.climate;
 
 public enum HeatToleranceEnum {
 

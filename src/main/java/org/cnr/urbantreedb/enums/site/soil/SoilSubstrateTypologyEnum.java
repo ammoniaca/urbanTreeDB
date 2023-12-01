@@ -1,6 +1,6 @@
-package org.cnr.urbantreedb.enums.sitecharacteristic.soil;
+package org.cnr.urbantreedb.enums.site.soil;
 
-public enum SoilSubstrateEnum {
+public enum SoilSubstrateTypologyEnum {
 
 
     GRAVEL("gravel"),
@@ -15,7 +15,7 @@ public enum SoilSubstrateEnum {
 
     public final String label;
 
-    private SoilSubstrateEnum(String label) {
+    private SoilSubstrateTypologyEnum(String label) {
 
         this.label = label;
     }

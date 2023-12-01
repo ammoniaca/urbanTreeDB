@@ -1,6 +1,6 @@
-package org.cnr.urbantreedb.enums.sitecharacteristic.soil;
+package org.cnr.urbantreedb.enums.site.soil;
 
-public enum SoilCompactionToleranceEnum {
+public enum WaterLoggingToleranceEnum {
 
     VERY_HIGH(6),
     HIGH(5),
@@ -12,9 +12,10 @@ public enum SoilCompactionToleranceEnum {
 
     public final int label;
 
-    private SoilCompactionToleranceEnum(int label) {
+    private WaterLoggingToleranceEnum(int label) {
 
         this.label = label;
     }
+
 
 }
