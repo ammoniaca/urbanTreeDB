@@ -13,10 +13,15 @@ public class SoilEntity {
     @Column(name = "id", updatable = false, nullable = false)
     private Long IdSoil;
 
-    @Column(name = "ph_value")
+    @Column(name = "min_ph_value")
     @Min(value=0, message = "pH value is greater than or equal to 0.")
     @Max(value = 14, message = "pH value is less than or equal to 14.")
-    private double phValue;
+    private double pHMin;
+
+    @Column(name = "max_ph_value")
+    @Min(value=0, message = "pH value need to be greater than or equal to 0.")
+    @Max(value = 14, message = "pH value need to be less than or equal to 14.")
+    private double phMax;
 
     private SoilCompactionToleranceEnum soilCompactionTolerance;
 

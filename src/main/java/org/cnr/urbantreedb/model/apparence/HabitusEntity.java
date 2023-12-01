@@ -27,6 +27,9 @@ public class HabitusEntity {
     @Column(name="crown_transparency")
     private CrownTransparencyEnum crownTransparency;
 
+    @Column(name="maximum_crown_radius")
+    private double  maximumCrownRadius;
+
     @Column(name="average_crown_radius")
     private double  averageCrownRadius;
 
@@ -36,12 +39,19 @@ public class HabitusEntity {
     @Column(name="average_tree_height")
     private double  averageTreeHeight;
 
+    @Column(name="maximum_trunk_diameter")
+    private double maximumTrunkDiameter;
+
     @Column(name="average_trunk_diameter")
     private double averageTrunkDiameter;
 
     @Column(name="average_bark_thickness")
     private double averageBarkThickness;
 
+    @Column(name="multi_stem_development")
+    private boolean multiStemDevelopment;
+
+    // TODO: probabilmente da inserire in aspetti negativi
     @Column(name = "spinescence")
     private boolean spinescence;
 
