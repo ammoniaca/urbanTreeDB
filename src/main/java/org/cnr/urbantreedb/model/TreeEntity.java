@@ -38,10 +38,10 @@ public class TreeEntity {
     @Column(name = "species")
     private String species;
 
-    @Column(name = "registration_datetime_utc")
+    @Column(name = "registration_datetime_utc") // creation_datetime_utc
     private Date registrationDateUTC;
 
-    @Column(name = "update_datetime_utc")
+    @Column(name = "update_datetime_utc") // last_modified_datetime_utc
     private Date updateDateUTC;
 
     @Column(name = "scientific_name")

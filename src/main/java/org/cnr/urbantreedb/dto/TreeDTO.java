@@ -1,9 +1,11 @@
 package org.cnr.urbantreedb.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
