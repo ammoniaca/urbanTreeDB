@@ -2,19 +2,26 @@ package org.cnr.urbantreedb.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import org.cnr.urbantreedb.model.distribution.OriginsEntity;
+import org.cnr.urbantreedb.model.distribution.DistributionEntity;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "trees")
 public class TreeEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(
+            name = "tree_sequence",
+            sequenceName = "tree_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "tree_sequence"
+    )
     @Column(name = "tree_id", updatable = false, nullable = false)
     private Long treeId;
 
@@ -57,7 +64,8 @@ public class TreeEntity {
             mappedBy="tree",
             cascade = CascadeType.ALL
     )
-    private List<OriginsEntity> origins = new ArrayList<>();
+    private List<DistributionEntity> origins = new ArrayList<>();
+
 
 
 

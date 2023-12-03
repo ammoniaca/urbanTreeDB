@@ -1,6 +1,6 @@
 package org.cnr.urbantreedb.enums.distribution;
 
-public enum OriginEnum {
+public enum arealEnum {
 
 
     ASIA("Asia"),
@@ -26,11 +26,11 @@ public enum OriginEnum {
     AUSTRALIA("Australia"),
     NEW_ZEALAND("New Zealand"),
     PACIFIC_ISLANDS("Pacific Islands"),
-    CULTIVATED_PLANTS("cultivated plants");
+    CULTIVATED_PLANTS("Cultivated plants");
 
     public final String label;
 
-    private OriginEnum(String label) {
+    private arealEnum(String label) {
 
         this.label = label;
     }

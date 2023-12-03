@@ -2,15 +2,14 @@ package org.cnr.urbantreedb.model.distribution;
 
 
 import jakarta.persistence.*;
-import org.cnr.urbantreedb.enums.distribution.OriginEnum;
+import org.cnr.urbantreedb.enums.distribution.arealEnum;
 import org.cnr.urbantreedb.model.TreeEntity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "distribution")
-public class OriginsEntity {
+public class DistributionEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,7 +29,7 @@ public class OriginsEntity {
             uniqueConstraints = @UniqueConstraint(columnNames = {"origin_id"})
     )
     @Column(name = "origin")
-    private List<OriginEnum> origins = new ArrayList<>();
+    private List<arealEnum> origins;
 
     @ManyToOne
     @JoinColumn(name="tree_id", nullable=false)
