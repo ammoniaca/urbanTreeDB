@@ -12,11 +12,11 @@ public class UrbanTreeDBApplication {
 	public static void main(String[] args) {
 
 
-		Date now = new Date();
+		/*Date now = new Date();
 
 		System.out.println(now);
 		TimeZone.setDefault( TimeZone.getTimeZone("UTC"));
-		System.out.println(now);
+		System.out.println(now);*/
 
 
 		SpringApplication.run(UrbanTreeDBApplication.class, args);
