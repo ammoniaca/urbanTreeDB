@@ -21,8 +21,7 @@ public class BlossomDTO {
     @JsonProperty("color")
     private Set<BlossomColorEnum> blossomColor;
 
-    @NotNull(message = "Odor cannot be empty.")
-    //@NotNull(message = "Blossom odor cannot be null.")
+    @NotNull(message = "Blossom odor cannot be empty.")
     @JsonProperty("odor")
     private Boolean isBlossomOdor;
 

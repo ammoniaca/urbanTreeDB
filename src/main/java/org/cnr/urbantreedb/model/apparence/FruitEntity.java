@@ -16,10 +16,12 @@ public class FruitEntity {
     @Column(name = "fruit_color")
     private FruitColorEnum fruitColor;
 
-    @Column(name = "fruit_ornamental")
-    private boolean fruitOrnamental;
+    @Column(name = "ornamental")
+    private boolean isFruitOrnamental;
 
     @Column(name = "infructescence")
     private InfructescenceEnum infructescence;
+
+
 
 }
