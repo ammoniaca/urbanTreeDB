@@ -1,12 +1,11 @@
 package org.cnr.urbantreedb.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
-import org.cnr.urbantreedb.enums.distribution.arealEnum;
+import org.cnr.urbantreedb.enums.distribution.ArealEnum;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -18,10 +17,10 @@ public class DistributionDTO {
 
     @NotNull(message = "Neophyte cannot be null.")
     @JsonProperty("neophyte")
-    private boolean isNeophyte;
+    private Boolean isNeophyte;
 
-    @NotNull(message = "Areal cannot be null.")
+    @NotEmpty(message = "Areal cannot be null.")
     @JsonProperty("areal")
-    private Set<arealEnum> areal;
+    private Set<ArealEnum> areal;
 
 }
