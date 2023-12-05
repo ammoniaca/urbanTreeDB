@@ -3,7 +3,7 @@ package org.cnr.urbantreedb.enums.apparence.leaf;
 public enum FoliageEnum {
 
     EVERGREEN("evergreen"),
-    DECIDUOS("deciduous");
+    DECIDUOUS("deciduous");
 
     public final String label;
 

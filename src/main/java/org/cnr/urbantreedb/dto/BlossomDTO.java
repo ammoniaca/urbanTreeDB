@@ -17,7 +17,7 @@ import java.util.Set;
 @Builder
 public class BlossomDTO {
 
-    @NotEmpty(message = "Blossom color cannot be null.")
+    @NotEmpty(message = "Blossom color(s) cannot be empty.")
     @JsonProperty("color")
     private Set<BlossomColorEnum> blossomColor;
 
@@ -25,11 +25,11 @@ public class BlossomDTO {
     @JsonProperty("odor")
     private Boolean isBlossomOdor;
 
-    @NotEmpty(message = "Blossom period cannot be null.")
+    @NotEmpty(message = "Blossom period(s) cannot be empty.")
     @JsonProperty("period")
     private Set<BlossomPeriodEnum> blossomPeriod;
 
-    @NotNull(message = "Blossom ornamental cannot be null.")
+    @NotNull(message = "Blossom ornamental cannot be empty.")
     @JsonProperty("ornamental")
     private Boolean isBlossomOrnamental;
 

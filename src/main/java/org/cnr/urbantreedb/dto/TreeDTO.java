@@ -17,38 +17,48 @@ import java.util.Set;
 @Builder
 public class TreeDTO {
 
-    @NotBlank(message = "Family cannot be nul.")
+    @NotBlank(message = "Tree family cannot be nul.")
     @JsonProperty("family")
     private String family;
 
-    @NotBlank(message = "Genius cannot be empty.")
+    @NotBlank(message = "Tree genius cannot be empty.")
     @JsonProperty("genius")
     private String genius;
 
-    @NotBlank(message = "Species cannot be null.")
+    @NotBlank(message = "Tree species cannot be null.")
     @JsonProperty("species")
     private String species;
 
-    @NotEmpty(message = "Common name(s) cannot be empty.")
+    @NotEmpty(message = "Tree common name(s) cannot be empty.")
     @JsonProperty("common_name")
     private Set<String> commonNames;
 
-    @NotNull(message = "Distribution cannot be null.")
-    @JsonProperty("distribution")
     @Valid
+    @NotNull(message = "Tree distribution parameters cannot be empty.")
+    @JsonProperty("distribution")
     private DistributionDTO distributionDTO;
 
-    @NotNull(message = "Blossom cannot be null.")
-    @JsonProperty("blossom")
     @Valid
+    @NotNull(message = "Tree blossom parameters cannot be empty.")
+    @JsonProperty("blossom")
     private BlossomDTO blossomDTO;
 
-    @NotNull(message = "Fruit cannot be null.")
-    @JsonProperty("fruit")
     @Valid
+    @NotNull(message = "Tree fruit parameters cannot be empty.")
+    @JsonProperty("fruit")
     private FruitDTO fruitDTO;
 
+    @Valid
+    @NotNull(message = "Tree crown parameters cannot be empty.")
+    @JsonProperty("crown")
+    private CrownDTO crownDTO;
 
+    // TODO: LEAF
+
+    @Valid
+    @NotNull(message = "Tree growth parameters cannot be empty.")
+    @JsonProperty("growth")
+    private GrowthDTO growthDTO;
 
 
 }

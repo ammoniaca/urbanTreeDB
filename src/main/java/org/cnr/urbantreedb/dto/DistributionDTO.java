@@ -15,11 +15,11 @@ import java.util.Set;
 @Builder
 public class DistributionDTO {
 
-    @NotNull(message = "Neophyte cannot be null.")
+    @NotNull(message = "Neophyte cannot be empty.")
     @JsonProperty("neophyte")
     private Boolean isNeophyte;
 
-    @NotEmpty(message = "Areal cannot be null.")
+    @NotEmpty(message = "Areal code(s) cannot be empty.")
     @JsonProperty("areal")
     private Set<ArealEnum> areal;
 

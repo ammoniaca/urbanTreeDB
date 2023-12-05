@@ -6,6 +6,7 @@ public enum LeafAutumnColoringEnum {
     RED("red"),
     ORANGE("orange"),
     BROWN("brown"),
+    GREEN("green"),
     UNOBTRUSIVE("unobtrusive");
 
     public final String label;

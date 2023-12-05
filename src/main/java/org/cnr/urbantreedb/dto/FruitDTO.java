@@ -16,15 +16,15 @@ import java.util.Set;
 @Builder
 public class FruitDTO {
 
-    @NotEmpty(message = "Fruit color cannot be empty.")
+    @NotEmpty(message = "Fruit color(s) cannot be empty.")
     @JsonProperty("color")
     private Set<FruitColorEnum> fruitColor;
 
-    @NotNull(message = "Fruit odor ornamental cannot be null.")
+    @NotNull(message = "Fruit ornamental cannot be null.")
     @JsonProperty("ornamental")
     private Boolean isFruitOrnamental;
 
-    @NotNull(message = "Fruit infructescence cannot be null.")
+    @NotEmpty(message = "Fruit infructescence(s) cannot be null.")
     @JsonProperty("infructescence")
     private Set<InfructescenceEnum> infructescence;
 
