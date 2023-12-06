@@ -1,10 +1,12 @@
 package org.cnr.urbantreedb.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
-import org.cnr.urbantreedb.enums.site.soil.SoilDepthCategoryEnum;
 import org.cnr.urbantreedb.enums.site.soil.SoilSubstrateTypologyEnum;
 
 import java.util.Set;
@@ -18,31 +20,41 @@ public class SoilConditionDTO {
 
     @Max(value = 10)
     @Min(value = 0)
-    @JsonProperty("salt_tolerance")
+    @NotNull(message = "Soil salt tolerance cannot be empty.")
+    @JsonProperty("salt")
     private Integer saltSoilToleranceLevel;
 
     @Max(value = 10)
     @Min(value = 0)
-    @JsonProperty("compaction_tolerance")
+    @NotNull(message = "Soil compaction tolerance cannot be empty.")
+    @JsonProperty("compaction")
     private Integer soilCompactionToleranceLevel;
 
     @Max(value = 10)
     @Min(value = 0)
-    @JsonProperty("moisture_tolerance")
+    @NotNull(message = "Soil moisture tolerance cannot be empty.")
+    @JsonProperty("moisture")
     private Integer soilMoistureToleranceLevel;
 
     @Max(value = 10)
     @Min(value = 0)
-    @JsonProperty("water_logging_tolerance")
+    @NotNull(message = "Soil water logging tolerance cannot be empty.")
+    @JsonProperty("water_logging")
     private Integer waterLoggingToleranceLevel;
 
     @Max(value = 2)
     @Min(value = 0)
+    @NotNull(message = "Soil depth cannot be empty.")
     @JsonProperty("depth")
     private Integer soilDepthCategory;
 
+    @NotEmpty(message = "Soil substrate cannot be empty.")
     @JsonProperty("substrate")
     private Set<SoilSubstrateTypologyEnum> soilSubstrateTypologyEnum;
 
+    @Valid
+    @NotEmpty(message = "Soil pH cannot be empty.")
+    @JsonProperty("ph")
+    private SoilPhDTO soilPhDTO;
 
 }
