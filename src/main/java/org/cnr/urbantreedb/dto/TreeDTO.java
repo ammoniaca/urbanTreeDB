@@ -53,7 +53,10 @@ public class TreeDTO {
     @JsonProperty("crown")
     private CrownDTO crownDTO;
 
-    // TODO: LEAF
+    @Valid
+    @NotNull(message = "Tree leaf parameters cannot be empty.")
+    @JsonProperty("leaf")
+    private LeafDTO leafDTO;
 
     @Valid
     @NotNull(message = "Tree growth parameters cannot be empty.")

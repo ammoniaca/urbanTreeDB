@@ -2,6 +2,7 @@ package org.cnr.urbantreedb.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import org.cnr.urbantreedb.enums.apparence.leaf.*;
 
@@ -14,6 +15,7 @@ import java.util.Set;
 @Builder
 public class LeafDTO {
 
+    @NotNull(message = "Deciduous cannot be empty.")
     @JsonProperty("deciduous")
     private Boolean isDeciduous;
 
