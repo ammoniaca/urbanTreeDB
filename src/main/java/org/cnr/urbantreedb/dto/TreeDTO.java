@@ -63,5 +63,8 @@ public class TreeDTO {
     @JsonProperty("growth")
     private GrowthDTO growthDTO;
 
+    @JsonProperty("climate")
+    private ClimateConditionDTO climateConditionDTO;
+
 
 }

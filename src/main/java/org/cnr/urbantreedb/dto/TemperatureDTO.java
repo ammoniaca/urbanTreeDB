@@ -12,6 +12,8 @@ import lombok.*;
 @Builder
 public class TemperatureDTO {
 
+    //TODO: Fahrenheit (°F), Celsius (°C), Kelvin (K)
+
     @NotNull(message = "Low temperature cannot be empty.")
     @JsonProperty("low")
     private Double lowTemperature;

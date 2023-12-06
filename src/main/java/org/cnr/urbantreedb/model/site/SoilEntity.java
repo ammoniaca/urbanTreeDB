@@ -23,13 +23,13 @@ public class SoilEntity {
     @Max(value = 14, message = "pH value need to be less than or equal to 14.")
     private double phMax;
 
-    private SoilCompactionToleranceEnum soilCompactionTolerance;
+    private Integer soilCompactionTolerance;
 
-    private WaterLoggingToleranceEnum waterLoggingTolerance;
+    private Integer waterLoggingTolerance;
 
-    private SaltToleranceEnum saltTolerance;
+    private Integer saltTolerance;
 
-    private SoilMoistureToleranceEnum soilMoistureTolerance;
+    private Integer soilMoistureTolerance;
 
     private SoilSubstrateTypologyEnum soilSubstrateTypology;
 
