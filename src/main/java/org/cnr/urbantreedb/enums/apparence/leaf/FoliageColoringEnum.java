@@ -1,6 +1,6 @@
 package org.cnr.urbantreedb.enums.apparence.leaf;
 
-public enum LeafAutumnColoringEnum {
+public enum FoliageColoringEnum {
 
     YELLOW("yellow"),
     RED("red"),
@@ -11,7 +11,7 @@ public enum LeafAutumnColoringEnum {
 
     public final String label;
 
-    private LeafAutumnColoringEnum(String label) {
+    private FoliageColoringEnum(String label) {
 
         this.label = label;
     }
