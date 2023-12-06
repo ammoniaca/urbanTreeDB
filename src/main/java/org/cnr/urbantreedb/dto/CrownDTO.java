@@ -25,7 +25,7 @@ public class CrownDTO {
     @Min(value = 0)
     @NotNull(message = "Tree crown transparency cannot be empty.")
     @JsonProperty("transparency")
-    private Integer crownTransparency;
+    private Integer crownTransparencyLevel;
 
     @Min(value = 0)
     @NotNull(message = "Tree crown maximum radius cannot be empty.")

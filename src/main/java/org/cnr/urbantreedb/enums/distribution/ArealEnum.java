@@ -5,7 +5,6 @@ import java.util.Optional;
 
 public enum ArealEnum {
 
-
     // UN M49 (standard country o area codes for statistical use)
     AFRICA("002", "Africa"),
     NORTHERN_AFRICA("015", "Northern Africa"),
