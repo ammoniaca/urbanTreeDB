@@ -27,14 +27,14 @@ public class CrownDTO {
     @JsonProperty("transparency")
     private Integer crownTransparencyLevel;
 
-    @Max(value = 300, message = "The crown maximum radius is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
-    @Min(value = 0, message = "The crown maximum radius is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
-    @NotNull(message = "Tree crown maximum radius cannot be empty.")
+    @Max(value = 300, message = "The maximum crown radius is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
+    @Min(value = 0, message = "The maximum crown radius is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
+    @NotNull(message = "Tree maximum crown radius cannot be empty.")
     @JsonProperty("maximum_radius")
     private Double maximumCrownRadius;
 
-    @Max(value = 300, message = "The crown average radius is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
-    @Min(value = 0, message = "The crown average radius is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
+    @Max(value = 300, message = "The average crown radius is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
+    @Min(value = 0, message = "The average crown radius is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
     @NotNull(message = "Tree crown average radius cannot be empty.")
     @JsonProperty("average_radius")
     private Double averageCrownRadius;

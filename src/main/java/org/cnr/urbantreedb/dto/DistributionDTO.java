@@ -17,7 +17,7 @@ public class DistributionDTO {
 
     @NotNull(message = "Neophyte cannot be empty.")
     @JsonProperty("neophyte")
-    private Boolean isNeophyte;
+    private Boolean isNeophyte; // True = introduced to Europe after 1492
 
     @NotEmpty(message = "Areal code(s) cannot be empty.")
     @JsonProperty("areal")

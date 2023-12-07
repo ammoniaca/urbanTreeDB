@@ -19,6 +19,10 @@ public class LeafDTO {
     @JsonProperty("deciduous")
     private Boolean isDeciduous;
 
+    @NotNull(message = "Ornamental cannot be empty.")
+    @JsonProperty("ornamental")
+    private Boolean isLeafOrnamental;
+
     @NotEmpty(message = "Leaf shape(s) cannot be empty.")
     @JsonProperty("shape")
     private Set<LeafShapeEnum> leafShape;
@@ -39,7 +43,7 @@ public class LeafDTO {
     @JsonProperty("color")
     private Set<LeafColoringEnum> leafColor;
 
-    @NotEmpty(message = "Leaf foliage(s) cannot be empty.")
+    @NotEmpty(message = "Leaf foliage(s) color cannot be empty.")
     @JsonProperty("foliage")
     private Set<FoliageColoringEnum> foliageColor;
 

@@ -16,14 +16,20 @@ public class SoilPhDTO {
     @Max(value = 14, message = "The soil pH is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
     @Min(value = 0, message = "The soil pH is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
     @NotNull(message = "Soil pH min cannot be empty.")
-    @JsonProperty("min")
-    private Double pHMin;
+    @JsonProperty("lower")
+    private Double lowerPH;
+
+    @Max(value = 14, message = "The soil pH is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
+    @Min(value = 0, message = "The soil pH is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
+    @NotNull(message = "Soil pH optimal cannot be empty.")
+    @JsonProperty("optimal")
+    private Double optimalPH;
 
     @Max(value = 14, message = "The soil pH is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
     @Min(value = 0, message = "The soil pH is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
     @NotNull(message = "Soil pH max cannot be empty.")
-    @JsonProperty("max")
-    private Double pHMax;
+    @JsonProperty("upper")
+    private Double upperPH;
 
 
 

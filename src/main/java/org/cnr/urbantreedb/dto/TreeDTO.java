@@ -33,6 +33,8 @@ public class TreeDTO {
     @JsonProperty("common_name")
     private Set<String> commonNames;
 
+    //TODO Infraname (subspecies, variety, cultivar, and hybrid)
+
     @Valid
     @NotNull(message = "Tree distribution parameters cannot be empty.")
     @JsonProperty("distribution")

@@ -19,8 +19,8 @@ public class TemperatureDTO {
     @Max(value = 70, message = "The low temperature is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
     @Min(value = -100, message = "The low temperature is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
     @NotNull(message = "Low temperature cannot be empty.")
-    @JsonProperty("low")
-    private Double lowTemperature;
+    @JsonProperty("lower")
+    private Double lowerTemperature;
 
     @Max(value = 70, message = "The optimal temperature is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
     @Min(value = -100, message = "The optimal temperature is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
@@ -31,7 +31,7 @@ public class TemperatureDTO {
     @Max(value = 70, message = "The high temperature is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
     @Min(value = -100, message = "The high temperature is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
     @NotNull(message = "High temperature cannot be empty.")
-    @JsonProperty("high")
-    private Double highTemperature;
+    @JsonProperty("upper")
+    private Double upperTemperature;
 
 }
