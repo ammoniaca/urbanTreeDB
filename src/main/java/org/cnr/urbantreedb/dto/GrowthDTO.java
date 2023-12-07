@@ -54,16 +54,16 @@ public class GrowthDTO {
     @JsonProperty("multistem")
     private Boolean isMultiStemDevelopment;
 
-    @Min(value = 0)
-    @Max(value = 10)
+    @Max(value = 10, message = "The growth speed is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
+    @Min(value = 0, message = "The growth speed is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
     @NotNull(message = "Growth speed cannot be empty.")
     @JsonProperty("speed")
     private Integer growthSpeedLevel;
 
-    @Min(value = 0)
-    @Max(value = 3)
+    @Max(value = 3, message = "The tree size class is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
+    @Min(value = 1, message = "The tree size class is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
     @NotNull(message = "Size class speed cannot be empty.")
-    @JsonProperty("class")
+    @JsonProperty("size")
     private Integer treeSizeClass;
 
 }

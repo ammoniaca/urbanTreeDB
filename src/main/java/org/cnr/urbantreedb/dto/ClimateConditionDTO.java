@@ -14,33 +14,31 @@ import lombok.*;
 @Builder
 public class ClimateConditionDTO {
 
-    @Max(value = 10)
-    @Min(value = 0)
+    @Max(value = 10, message = "The drought tolerance is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
+    @Min(value = 0, message = "The drought tolerance is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
     @NotNull(message = "Drought tolerance cannot be empty.")
     @JsonProperty("drought")
     private Integer droughtToleranceLevel;
 
-    @Max(value = 10)
-    @Min(value = 0)
+    @Max(value = 10, message = "The heat tolerance is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
+    @Min(value = 0, message = "The heat tolerance is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
     @NotNull(message = "Heat tolerance cannot be empty.")
     @JsonProperty("heat")
     private Integer heatToleranceLevel;
 
-    @Max(value = 10)
-    @Min(value = 0)
+    @Max(value = 10, message = "The late frost tolerance is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
+    @Min(value = 0, message = "The late frost tolerance is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
     @NotNull(message = "Late frost tolerance cannot be empty.")
     @JsonProperty("late_frost")
     private Integer lateFrostToleranceLevel;
 
-    @Max(value = 10)
-    @Min(value = 0)
+    @Max(value = 10, message = "The light requirement is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
+    @Min(value = 0, message = "The light requirement is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
     @NotNull(message = "Light requirement cannot be empty.")
     @JsonProperty("light")
     private Integer lightRequirementLevel;
 
     @Valid
-    @Max(value = 50)
-    @Min(value = -100)
     @NotNull(message = "Temperature cannot be empty.")
     @JsonProperty("temperature")
     private TemperatureDTO temperatureDTO;
