@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   postgres:
-    image: postgres
+    image: postgres:latest
     container_name: local-postgresql-tree-container
     restart: always
     ports:
