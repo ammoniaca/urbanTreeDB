@@ -1,7 +1,6 @@
-package org.cnr.urbantreedb.model.apparence;
+package org.cnr.urbantreedb.entity.apparence;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import org.cnr.urbantreedb.enums.apparence.blossom.BlossomColorEnum;
 import org.cnr.urbantreedb.enums.apparence.blossom.BlossomPeriodEnum;
 

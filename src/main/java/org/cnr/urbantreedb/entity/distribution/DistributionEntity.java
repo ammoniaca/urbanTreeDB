@@ -1,9 +1,9 @@
-package org.cnr.urbantreedb.model.distribution;
+package org.cnr.urbantreedb.entity.distribution;
 
 
 import jakarta.persistence.*;
 import org.cnr.urbantreedb.enums.distribution.ArealEnum;
-import org.cnr.urbantreedb.model.TreeEntity;
+import org.cnr.urbantreedb.entity.TreeEntity;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
-package org.cnr.urbantreedb.model;
+package org.cnr.urbantreedb.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import org.cnr.urbantreedb.model.distribution.DistributionEntity;
+import org.cnr.urbantreedb.entity.distribution.DistributionEntity;
 
 import java.util.ArrayList;
 import java.util.Date;

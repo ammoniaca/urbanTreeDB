@@ -1,4 +1,4 @@
-package org.cnr.urbantreedb.model.apparence;
+package org.cnr.urbantreedb.entity.apparence;
 
 import jakarta.persistence.*;
 import org.cnr.urbantreedb.enums.apparence.leaf.FoliageColoringEnum;

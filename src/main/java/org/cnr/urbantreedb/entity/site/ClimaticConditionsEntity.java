@@ -1,4 +1,4 @@
-package org.cnr.urbantreedb.model.site;
+package org.cnr.urbantreedb.entity.site;
 
 import jakarta.persistence.*;
 import org.cnr.urbantreedb.enums.site.climate.DroughtToleranceEnum;

@@ -1,4 +1,4 @@
-package org.cnr.urbantreedb.model.site;
+package org.cnr.urbantreedb.entity.site;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;

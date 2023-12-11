@@ -1,6 +1,6 @@
 package org.cnr.urbantreedb.repository;
 
-import org.cnr.urbantreedb.model.TreeEntity;
+import org.cnr.urbantreedb.entity.TreeEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
