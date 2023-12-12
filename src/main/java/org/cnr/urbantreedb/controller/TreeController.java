@@ -31,11 +31,10 @@ public class TreeController {
 
             @RequestBody
             @Valid
-            TreeRequestDTO treeDTO
+            TreeRequestDTO treeRequestDTO
             // BindingResult result
     ){
-        System.out.println(treeDTO.getFamily());
-        TreeResponseDTO treeResponseDTO = treeService.createTree(treeDTO);
+        TreeResponseDTO treeResponseDTO = treeService.createTree(treeRequestDTO);
         // Return the created resource with a 201 (created) status code
         return ResponseEntity
                 .status(HttpStatus.CREATED)

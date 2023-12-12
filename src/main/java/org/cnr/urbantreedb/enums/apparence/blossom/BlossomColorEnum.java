@@ -43,7 +43,9 @@ public enum BlossomColorEnum {
 
     @JsonCreator
     public static BlossomColorEnum fromValues(String value) {
+        var yy = BlossomColorEnum.values();
         for (BlossomColorEnum category : BlossomColorEnum.values()) {
+            var xx = category;
             if (category.getLabel().equalsIgnoreCase(value)) {
                 return category;
             }

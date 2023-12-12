@@ -1,7 +1,9 @@
 package org.cnr.urbantreedb.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @AllArgsConstructor
@@ -15,7 +17,7 @@ public class TreeRequestDTO {
     @JsonProperty("family")
     private String family;
 
-    @NotBlank(message = "Tree genius cannot be empty.")
+    @NotBlank(message = "Tree genus cannot be empty.")
     @JsonProperty("genus")
     private String genus;
 
@@ -28,15 +30,17 @@ public class TreeRequestDTO {
 
     /*@NotEmpty(message = "Tree common name(s) cannot be empty.")
     @JsonProperty("common_name")
-    private Set<String> commonName;
+    private Set<String> commonName;*/
 
     //TODO Infraname (subspecies (spp), variety (var), cultivar (cv), and hybrid)  ‘spp.’ or ‘var.’
+
 
     @Valid
     @NotNull(message = "Tree distribution parameters cannot be empty.")
     @JsonProperty("distribution")
     private DistributionDTO distributionDTO;
 
+    /*
     @Valid
     @NotNull(message = "Tree blossom parameters cannot be empty.")
     @JsonProperty("blossom")

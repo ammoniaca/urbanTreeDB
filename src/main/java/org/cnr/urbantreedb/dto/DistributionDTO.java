@@ -4,8 +4,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
-import org.cnr.urbantreedb.enums.distribution.ArealEnum;
+import org.cnr.urbantreedb.enums.distribution.ZoneEnum;
 
+import java.util.List;
 import java.util.Set;
 
 @AllArgsConstructor
@@ -19,8 +20,8 @@ public class DistributionDTO {
     @JsonProperty("neophyte")
     private Boolean isNeophyte; // True = introduced to Europe after 1492
 
-    @NotEmpty(message = "Areal code(s) cannot be empty.")
-    @JsonProperty("areal")
-    private Set<ArealEnum> areal;
+    @NotEmpty(message = "Zone code(s) cannot be empty.")
+    @JsonProperty("zone")
+    private List<ZoneEnum> zones;
 
 }
