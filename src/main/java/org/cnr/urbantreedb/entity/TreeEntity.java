@@ -1,12 +1,8 @@
 package org.cnr.urbantreedb.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-import org.cnr.urbantreedb.entity.distribution.DistributionEntity;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.time.OffsetDateTime;
 
 @Entity
 @Table(name = "trees")
@@ -25,27 +21,82 @@ public class TreeEntity {
     @Column(name = "tree_id", updatable = false, nullable = false)
     private Long treeId;
 
-
-    @NotNull(message = "Family cannot be null.")
     @Column(name = "family")
     private String family;
 
-    @NotNull(message = "Genius cannot be null.")
-    @Column(name = "genius")
-    private String genius;
+    @Column(name = "genus")
+    private String genus;
 
-    @NotNull(message = "Species cannot be null.")
     @Column(name = "species")
     private String species;
 
+    @Column(name = "binomial_name")
+    private String binomialName;
+
     @Column(name = "registration_datetime_utc") // creation_datetime_utc
-    private Date registrationDateUTC;
+    private OffsetDateTime registrationDatetimeUTC;
 
     @Column(name = "update_datetime_utc") // last_modified_datetime_utc
-    private Date updateDateUTC;
+    private OffsetDateTime updateDatetimeUTC;
 
-    @Column(name = "scientific_name")
-    private String scientificName;
+    public Long getTreeId() {
+        return treeId;
+    }
+
+    public void setTreeId(Long treeId) {
+        this.treeId = treeId;
+    }
+
+    public String getFamily() {
+        return family;
+    }
+
+    public void setFamily(String family) {
+        this.family = family;
+    }
+
+    public String getGenus() {
+        return genus;
+    }
+
+    public void setGenus(String genius) {
+        this.genus = genius;
+    }
+
+    public String getSpecies() {
+        return species;
+    }
+
+    public void setSpecies(String species) {
+        this.species = species;
+    }
+
+    public OffsetDateTime getRegistrationDatetimeUTC() {
+        return registrationDatetimeUTC;
+    }
+
+    public void setRegistrationDatetimeUTC(OffsetDateTime registrationDatetimeUTC) {
+        this.registrationDatetimeUTC = registrationDatetimeUTC;
+    }
+
+    public OffsetDateTime getUpdateDatetimeUTC() {
+        return updateDatetimeUTC;
+    }
+
+    public void setUpdateDatetimeUTC(OffsetDateTime updateDatetimeUTC) {
+        this.updateDatetimeUTC = updateDatetimeUTC;
+    }
+
+    public String getBinomialName() {
+        return binomialName;
+    }
+
+    public void setBinomialName(String scientificName) {
+        this.binomialName = scientificName;
+    }
+
+    /*
+
 
     @NotNull(message = "Common name(s) cannot be null.")
     @ElementCollection(
@@ -66,7 +117,7 @@ public class TreeEntity {
     )
     private List<DistributionEntity> origins = new ArrayList<>();
 
-
+*/
 
 
 

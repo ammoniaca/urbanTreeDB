@@ -1,13 +1,13 @@
 package org.cnr.urbantreedb.controller;
 
 import jakarta.validation.Valid;
-import org.cnr.urbantreedb.dto.TreeDTO;
+import org.cnr.urbantreedb.dto.TreeRequestDTO;
+import org.cnr.urbantreedb.dto.TreeResponseDTO;
 import org.cnr.urbantreedb.service.TreeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -18,6 +18,7 @@ public class TreeController {
 
     @Autowired
     public TreeController(TreeService treeService) {
+
         this.treeService = treeService;
     }
 
@@ -30,10 +31,14 @@ public class TreeController {
 
             @RequestBody
             @Valid
-            TreeDTO treeDTO
+            TreeRequestDTO treeDTO
             // BindingResult result
     ){
         System.out.println(treeDTO.getFamily());
-        return ResponseEntity.ok(HttpStatus.OK);
+        TreeResponseDTO treeResponseDTO = treeService.createTree(treeDTO);
+        // Return the created resource with a 201 (created) status code
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(treeResponseDTO);
     }
 }

@@ -1,39 +1,36 @@
 package org.cnr.urbantreedb.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
-import org.springframework.objenesis.SpringObjenesis;
-
-import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @Builder
-public class TreeDTO {
+public class TreeRequestDTO {
 
-    @NotBlank(message = "Tree family cannot be nul.")
+    @NotBlank(message = "Tree family cannot be empty.")
     @JsonProperty("family")
     private String family;
 
     @NotBlank(message = "Tree genius cannot be empty.")
-    @JsonProperty("genius")
-    private String genius;
+    @JsonProperty("genus")
+    private String genus;
 
     @NotBlank(message = "Tree species cannot be null.")
     @JsonProperty("species")
     private String species;
 
-    @NotEmpty(message = "Tree common name(s) cannot be empty.")
-    @JsonProperty("common_name")
-    private Set<String> commonNames;
+    @JsonProperty("infraname")
+    private String infraname;
 
-    //TODO Infraname (subspecies, variety, cultivar, and hybrid)
+    /*@NotEmpty(message = "Tree common name(s) cannot be empty.")
+    @JsonProperty("common_name")
+    private Set<String> commonName;
+
+    //TODO Infraname (subspecies (spp), variety (var), cultivar (cv), and hybrid)  ‘spp.’ or ‘var.’
 
     @Valid
     @NotNull(message = "Tree distribution parameters cannot be empty.")
@@ -67,7 +64,7 @@ public class TreeDTO {
 
     @JsonProperty("climate")
     private ClimateConditionDTO climateConditionDTO;
-
+*/
 
 
 }
