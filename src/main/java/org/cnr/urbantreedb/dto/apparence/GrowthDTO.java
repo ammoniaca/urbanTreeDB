@@ -1,4 +1,4 @@
-package org.cnr.urbantreedb.dto;
+package org.cnr.urbantreedb.dto.apparence;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Column;

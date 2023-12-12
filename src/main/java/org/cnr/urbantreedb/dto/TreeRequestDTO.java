@@ -5,6 +5,7 @@ import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
+import org.cnr.urbantreedb.dto.distribution.DistributionDTO;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -34,11 +35,10 @@ public class TreeRequestDTO {
 
     //TODO Infraname (subspecies (spp), variety (var), cultivar (cv), and hybrid)  ‘spp.’ or ‘var.’
 
-
     @Valid
     @NotNull(message = "Tree distribution parameters cannot be empty.")
     @JsonProperty("distribution")
-    private DistributionDTO distributionDTO;
+    private DistributionDTO distribution;
 
     /*
     @Valid

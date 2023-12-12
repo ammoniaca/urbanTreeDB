@@ -1,4 +1,4 @@
-package org.cnr.urbantreedb.dto;
+package org.cnr.urbantreedb.dto.distribution;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotEmpty;
@@ -20,8 +20,8 @@ public class DistributionDTO {
     @JsonProperty("neophyte")
     private Boolean isNeophyte; // True = introduced to Europe after 1492
 
-    @NotEmpty(message = "Zone code(s) cannot be empty.")
-    @JsonProperty("zone")
-    private List<ZoneEnum> zones;
-
+    /*@NotEmpty(message = "Zone code(s) cannot be empty.")
+    @JsonProperty("zones")
+    private Set<ZoneEnum> zones;
+*/
 }

@@ -28,7 +28,8 @@ public class TreeService {
     }
 
     public TreeResponseDTO createTree(TreeRequestDTO treeRequestDTO) {
-        TreeEntity treeEntity = modelMapper.map(treeRequestDTO, TreeEntity.class);
+        TreeEntity treeEntity = modelMapper
+                .map(treeRequestDTO, TreeEntity.class);
 
         // set datetime in UTC
         OffsetDateTime odt = OffsetDateTime.now(ZoneOffset.UTC);

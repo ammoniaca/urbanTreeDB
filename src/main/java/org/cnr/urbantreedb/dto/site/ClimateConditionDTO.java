@@ -1,4 +1,4 @@
-package org.cnr.urbantreedb.dto;
+package org.cnr.urbantreedb.dto.site;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.Valid;

@@ -2,6 +2,7 @@ package org.cnr.urbantreedb.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
+import org.cnr.urbantreedb.dto.distribution.DistributionDTO;
 
 import java.time.OffsetDateTime;
 
@@ -33,4 +34,6 @@ public class TreeResponseDTO {
     @JsonProperty("update_datetime_utc")
     private OffsetDateTime updateDatetimeUTC;
 
+    @JsonProperty("distribution")
+    private DistributionDTO distribution;
 }

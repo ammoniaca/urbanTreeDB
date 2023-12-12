@@ -2,37 +2,33 @@ package org.cnr.urbantreedb.entity.distribution;
 
 
 import jakarta.persistence.*;
+import lombok.*;
 import org.cnr.urbantreedb.enums.distribution.ZoneEnum;
 import org.cnr.urbantreedb.entity.TreeEntity;
 
-import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table(name = "distribution")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Builder
+@Table(name = "distributions")
 public class DistributionEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "origin_id", updatable = false, nullable = false)
-    private Long originId;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "distribution_id", updatable = false, nullable = false)
+    private Long distribution_id;
 
     @Column(name = "neophyte")
-    private boolean neophyte; // True if introduced to Europe after 1492
+    private Boolean isNeophyte; // True if introduced to Europe after 1492
 
-    @ElementCollection(
-            targetClass = String.class,
-            fetch = FetchType.EAGER
-    )
-    @CollectionTable(
-            name = "origins",
-            joinColumns = @JoinColumn(name = "origin_id", nullable = false),
-            uniqueConstraints = @UniqueConstraint(columnNames = {"origin_id"})
-    )
-    @Column(name = "origin")
-    private List<ZoneEnum> origins;
+    @Column(name = "zones")
+    private Set<ZoneEnum> zones;
 
-    @ManyToOne
-    @JoinColumn(name="tree_id", nullable=false)
-    private TreeEntity tree;
+    @OneToOne(mappedBy = "distribution")
+    private TreeEntity treeEntity;
 
 }

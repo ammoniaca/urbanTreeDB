@@ -1,10 +1,18 @@
 package org.cnr.urbantreedb.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
+import org.cnr.urbantreedb.entity.distribution.DistributionEntity;
 
 import java.time.OffsetDateTime;
 
+
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Builder
 @Table(name = "trees")
 public class TreeEntity {
 
@@ -19,7 +27,7 @@ public class TreeEntity {
             generator = "tree_sequence"
     )
     @Column(name = "tree_id", updatable = false, nullable = false)
-    private Long treeId;
+    private Long tree_id;
 
     @Column(name = "family")
     private String family;
@@ -39,87 +47,9 @@ public class TreeEntity {
     @Column(name = "update_datetime_utc") // last_modified_datetime_utc
     private OffsetDateTime updateDatetimeUTC;
 
-    public Long getTreeId() {
-        return treeId;
-    }
-
-    public void setTreeId(Long treeId) {
-        this.treeId = treeId;
-    }
-
-    public String getFamily() {
-        return family;
-    }
-
-    public void setFamily(String family) {
-        this.family = family;
-    }
-
-    public String getGenus() {
-        return genus;
-    }
-
-    public void setGenus(String genius) {
-        this.genus = genius;
-    }
-
-    public String getSpecies() {
-        return species;
-    }
-
-    public void setSpecies(String species) {
-        this.species = species;
-    }
-
-    public OffsetDateTime getRegistrationDatetimeUTC() {
-        return registrationDatetimeUTC;
-    }
-
-    public void setRegistrationDatetimeUTC(OffsetDateTime registrationDatetimeUTC) {
-        this.registrationDatetimeUTC = registrationDatetimeUTC;
-    }
-
-    public OffsetDateTime getUpdateDatetimeUTC() {
-        return updateDatetimeUTC;
-    }
-
-    public void setUpdateDatetimeUTC(OffsetDateTime updateDatetimeUTC) {
-        this.updateDatetimeUTC = updateDatetimeUTC;
-    }
-
-    public String getBinomialName() {
-        return binomialName;
-    }
-
-    public void setBinomialName(String scientificName) {
-        this.binomialName = scientificName;
-    }
-
-    /*
-
-
-    @NotNull(message = "Common name(s) cannot be null.")
-    @ElementCollection(
-            targetClass = String.class,
-            fetch = FetchType.EAGER
-    )
-    @CollectionTable(
-            name = "common_names",
-            joinColumns = @JoinColumn(name = "common_name_id", nullable = false),
-            uniqueConstraints = @UniqueConstraint(columnNames = {"common_name_id"})
-    )
-    @Column(name = "common_name")
-    private List<String> commonNames = new ArrayList<>();
-
-    @OneToMany(
-            mappedBy="tree",
-            cascade = CascadeType.ALL
-    )
-    private List<DistributionEntity> origins = new ArrayList<>();
-
-*/
-
-
-
+    //fk_distribution_id
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_distribution_id")
+    private DistributionEntity distribution;
 
 }
