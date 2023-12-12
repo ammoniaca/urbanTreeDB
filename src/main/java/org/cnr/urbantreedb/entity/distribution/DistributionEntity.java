@@ -25,8 +25,8 @@ public class DistributionEntity {
     @Column(name = "neophyte")
     private Boolean isNeophyte; // True if introduced to Europe after 1492
 
-    @Column(name = "zones")
-    private Set<ZoneEnum> zones;
+    @Column(name = "zone")
+    private Set<ZoneEnum> zone;
 
     @OneToOne(mappedBy = "distribution")
     private TreeEntity treeEntity;

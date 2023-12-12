@@ -27,7 +27,7 @@ public class TreeEntity {
             generator = "tree_sequence"
     )
     @Column(name = "tree_id", updatable = false, nullable = false)
-    private Long tree_id;
+    private Long treeId;
 
     @Column(name = "family")
     private String family;

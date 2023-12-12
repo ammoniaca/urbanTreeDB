@@ -20,8 +20,8 @@ public class DistributionDTO {
     @JsonProperty("neophyte")
     private Boolean isNeophyte; // True = introduced to Europe after 1492
 
-    /*@NotEmpty(message = "Zone code(s) cannot be empty.")
-    @JsonProperty("zones")
-    private Set<ZoneEnum> zones;
-*/
+    @NotEmpty(message = "Zone code(s) cannot be empty.")
+    @JsonProperty("zone")
+    private Set<ZoneEnum> zone;
+
 }
