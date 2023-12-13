@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
+import org.cnr.urbantreedb.enums.MonthEnum;
 import org.cnr.urbantreedb.enums.apparence.leaf.*;
 
 import java.util.Set;
@@ -22,6 +23,14 @@ public class LeafDTO {
     @NotNull(message = "Ornamental cannot be empty.")
     @JsonProperty("ornamental")
     private Boolean isLeafOrnamental;
+
+    @NotNull(message = "Foliage ornamental cannot be empty.")
+    @JsonProperty("foliage_ornamental")
+    private Boolean isFoliageOrnamental;
+
+    @NotNull(message = "Single leaf size cannot be empty.")
+    @JsonProperty("size")
+    private Double singleLeafSize;
 
     @NotEmpty(message = "Leaf shape(s) cannot be empty.")
     @JsonProperty("shape")
@@ -46,5 +55,9 @@ public class LeafDTO {
     @NotEmpty(message = "Leaf foliage(s) color cannot be empty.")
     @JsonProperty("foliage")
     private Set<FoliageColoringEnum> foliageColor;
+
+    @NotEmpty(message = "Foliage period cannot be empty.")
+    @JsonProperty("foliage_period")
+    private Set<MonthEnum> foliagePeriod;
 
 }

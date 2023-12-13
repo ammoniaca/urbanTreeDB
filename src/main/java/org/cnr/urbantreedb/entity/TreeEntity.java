@@ -2,6 +2,7 @@ package org.cnr.urbantreedb.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.cnr.urbantreedb.entity.apparence.LeafEntity;
 import org.cnr.urbantreedb.entity.distribution.DistributionEntity;
 
 import java.time.OffsetDateTime;
@@ -58,5 +59,12 @@ public class TreeEntity {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "fk_distribution_id")
     private DistributionEntity distribution;
+
+    //fk_leaf_id
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_leaf_id")
+    private LeafEntity leaf;
+
+
 
 }

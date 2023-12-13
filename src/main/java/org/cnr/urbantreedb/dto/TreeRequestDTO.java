@@ -48,7 +48,7 @@ public class TreeRequestDTO {
     @Valid
     @NotNull(message = "Tree leaf parameters cannot be empty.")
     @JsonProperty("leaf")
-    private LeafDTO leafDTO;
+    private LeafDTO leaf;
 
     /*
     @Valid

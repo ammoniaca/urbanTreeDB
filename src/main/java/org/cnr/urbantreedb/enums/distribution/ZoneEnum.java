@@ -8,7 +8,6 @@ import org.springframework.data.util.StreamUtils;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 public enum ZoneEnum {
 
@@ -87,13 +86,13 @@ public enum ZoneEnum {
 
         return code;
     }
-/*
+
+    /*
     public String getFullName() {
         return fullName;
     }*/
 
     private static String getErrorMessage(String value){
-        StringBuilder errorMessage = new StringBuilder();;
         List<Integer> codes = Arrays.stream(values())
                 .map(e -> valueOf(e.name()).code)
                 .toList();
@@ -105,18 +104,15 @@ public enum ZoneEnum {
                         fullNames.stream(),
                         (code, name) -> String.format("%s (%s)", code, name))
                 .toList();
-        errorMessage
-                .append("Unknown value: ")
-                .append(value)
-                .append(". Allowed values are: [")
-                .append(String.join(", ", processedList))
-                .append("]");;
-        return errorMessage.toString();
+        return "Unknown value: " +
+                value +
+                ". Allowed values are: [" +
+                String.join(", ", processedList) +
+                "]";
     }
 
 
     private static String getErrorMessage(int value){
-        StringBuilder errorMessage = new StringBuilder();
         List<Integer> codes = Arrays.stream(values())
                 .map(e -> valueOf(e.name()).code)
                 .toList();
@@ -128,12 +124,10 @@ public enum ZoneEnum {
                         fullNames.stream(),
                         (code, name) -> String.format("%s (%s)", code, name))
                 .toList();
-        errorMessage
-                .append("Unknown value: ")
-                .append(value).append(". Allowed values are: [")
-                .append(String.join(", ", processedList))
-                .append("]");
-        return errorMessage.toString();
+        return "Unknown value: " +
+                value + ". Allowed values are: [" +
+                String.join(", ", processedList) +
+                "]";
     }
 
     // Reverse lookup methods
@@ -148,7 +142,7 @@ public enum ZoneEnum {
     }
 */
     @JsonCreator
-    public static ZoneEnum getZoneByValue(int value) {
+    public static ZoneEnum of(int value) {
         Optional<ZoneEnum> zone = Arrays.stream(ZoneEnum.values())
                 .filter(e -> e.code == value)
                 .findFirst();
