@@ -116,7 +116,7 @@ public enum ZoneEnum {
 
 
     private static String getErrorMessage(int value){
-        StringBuilder errorMessage = new StringBuilder();;
+        StringBuilder errorMessage = new StringBuilder();
         List<Integer> codes = Arrays.stream(values())
                 .map(e -> valueOf(e.name()).code)
                 .toList();
@@ -156,6 +156,7 @@ public enum ZoneEnum {
                 () -> new EnumArgumentNotValidException(getErrorMessage(value))
         );
     }
+
 
 
 

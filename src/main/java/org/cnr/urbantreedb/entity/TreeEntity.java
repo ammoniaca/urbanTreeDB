@@ -5,6 +5,7 @@ import lombok.*;
 import org.cnr.urbantreedb.entity.distribution.DistributionEntity;
 
 import java.time.OffsetDateTime;
+import java.util.Set;
 
 
 @Entity
@@ -37,6 +38,12 @@ public class TreeEntity {
 
     @Column(name = "species")
     private String species;
+
+    @Column(name = "common_name")
+
+    @ElementCollection(targetClass = String.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "common_name", joinColumns = @JoinColumn(name = "fk_tree_id"))
+    private Set<String> commonName;
 
     @Column(name = "binomial_name")
     private String binomialName;

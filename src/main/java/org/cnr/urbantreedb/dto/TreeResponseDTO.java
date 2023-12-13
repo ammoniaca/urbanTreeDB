@@ -5,6 +5,7 @@ import lombok.*;
 import org.cnr.urbantreedb.dto.distribution.DistributionDTO;
 
 import java.time.OffsetDateTime;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -27,6 +28,9 @@ public class TreeResponseDTO {
 
     @JsonProperty("binomial_name")
     private String binomialName;
+
+    @JsonProperty("common_name")
+    private Set<String> commonName;
 
     @JsonProperty("registration_datetime_utc")
     private OffsetDateTime registrationDatetimeUTC;
