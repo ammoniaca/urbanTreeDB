@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
-import org.cnr.urbantreedb.enums.Month;
 import org.cnr.urbantreedb.enums.MonthEnum;
 import org.cnr.urbantreedb.enums.apparence.leaf.*;
 
@@ -59,6 +58,6 @@ public class LeafDTO {
 
     @NotEmpty(message = "Foliage period cannot be empty.")
     @JsonProperty("foliage_period")
-    private Set<Month> foliagePeriod;
+    private Set<MonthEnum> foliagePeriod;
 
 }
