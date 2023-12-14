@@ -3,7 +3,7 @@ version: '3.8'
 services:
   postgres:
     image: postgres:latest
-    container_name: local-postgresql-tree-container
+    container_name: postgres
     restart: always
     ports:
       - "5432:5432"
@@ -16,12 +16,12 @@ services:
 
   pgadmin:
     image: dpage/pgadmin4
-    container_name: local-pgadmin4-container
+    container_name: pgadmin4
     restart: always
     ports:
       - "8888:80"
     environment:
-      PGADMIN_DEFAULT_EMAIL: user-name@domain-name.com
+      PGADMIN_DEFAULT_EMAIL: ale@mail.com
       PGADMIN_DEFAULT_PASSWORD: 123
     volumes:
       - pgadmin-data:/var/lib/pgadmin

@@ -1,4 +1,4 @@
-package org.cnr.urbantreedb.enums.site.soil;
+package org.cnr.urbantreedb.enums.soil;
 
 public enum SoilDepthCategoryEnum {
 

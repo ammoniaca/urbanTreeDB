@@ -1,39 +1,47 @@
 package org.cnr.urbantreedb.entity.apparence;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
+import lombok.*;
+import org.cnr.urbantreedb.entity.TreeEntity;
+import org.cnr.urbantreedb.enums.MonthEnum;
 import org.cnr.urbantreedb.enums.apparence.blossom.BlossomColorEnum;
-import org.cnr.urbantreedb.enums.apparence.blossom.BlossomPeriodEnum;
+import org.cnr.urbantreedb.enums.apparence.blossom.BlossomInflorescenceEnum;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
-@Table(name = "blossom")
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@Builder
+@Table(name = "blossoms")
 public class BlossomEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false, nullable = false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "blossom_id", updatable = false, nullable = false)
     private Long blossomId;
 
-    @ElementCollection(
-            targetClass = BlossomColorEnum.class,
-            fetch = FetchType.EAGER
-    )
-    @CollectionTable(
-            name = "blossom_colors",
-            joinColumns = @JoinColumn(name = "blossom_color_id", nullable = false),
-            uniqueConstraints = @UniqueConstraint(columnNames = {"blossom_color_id"})
-    )
-    @Column(name = "blossom_color")
-    private List<BlossomColorEnum> blossomColors;
+    @Column(name = "odor")
+    private boolean isBlossomOdor;
 
-    @Column(name = "blossom_odor")
-    private boolean blossomOdor;
+    @Column(name = "ornamental")
+    private Boolean isBlossomOrnamental;
 
-    @Column(name = "blossom_period")
-    private BlossomPeriodEnum blossomPeriod;
+    @Column(name = "inflorescence")
+    private Set<BlossomInflorescenceEnum> inflorescence;
 
-    @Column(name = "blossom_ornamental")
-    private boolean blossomOrnamental;
+    @Column(name = "color")
+    private Set<BlossomColorEnum> blossomColor;
+
+    @Column(name = "period")
+    private Set<MonthEnum> blossomPeriod;
+
+    @OneToOne(mappedBy = "blossom")
+    private TreeEntity treeEntity;
 
 }

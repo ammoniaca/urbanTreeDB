@@ -1,4 +1,4 @@
-package org.cnr.urbantreedb.enums.apparence.leaf;
+package org.cnr.urbantreedb.enums.likertscale;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -8,26 +8,17 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-public enum LeafMarginEnum {
+public enum Point3ScaleRateEnum {
 
-    CILIATE("ciliate"),
-    CRENATE("crenate"),
-    DENTATE("dentate"),
-    DENTICULATE("denticulate"),
-    DOUBLY_SERRATE("doubly-serrate"),
-    ENTIRE("entire"),
-    LOBATE("lobate"),
-    SERRATE("serrate"),
-    SERRULATE("serrulate"),
-    SINUATE("sinuate"),
-    SPINY("spiny"),
-    UNDULATE("undulate");
+    FAST("fast"),
+    MEDIUM("medium"),
+    SLOW("slow");
 
     public final String lowerName;
 
-    private LeafMarginEnum(String label) {
+    private Point3ScaleRateEnum(String lowerName) {
 
-        this.lowerName = label;
+        this.lowerName = lowerName;
     }
 
     @JsonValue
@@ -46,15 +37,13 @@ public enum LeafMarginEnum {
     }
 
     @JsonCreator
-    public static LeafMarginEnum of(String value) {
-        Optional<LeafMarginEnum> margin = Arrays.stream(values())
+    public static Point3ScaleRateEnum of(String value) {
+        Optional<Point3ScaleRateEnum> label = Arrays.stream(values())
                 .filter(e -> e.lowerName.equalsIgnoreCase(value))
                 .findFirst();
-        return margin.orElseThrow(
+        return label.orElseThrow(
                 () -> new EnumArgumentNotValidException(getErrorMessage(value))
         );
     }
-
-
 
 }

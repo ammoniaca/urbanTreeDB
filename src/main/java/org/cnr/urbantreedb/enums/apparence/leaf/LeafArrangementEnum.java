@@ -46,7 +46,7 @@ public enum LeafArrangementEnum {
 
     @JsonCreator
     public static LeafArrangementEnum of(String value) {
-        Optional<LeafArrangementEnum> arrangement = Arrays.stream(LeafArrangementEnum.values())
+        Optional<LeafArrangementEnum> arrangement = Arrays.stream(values())
                 .filter(e -> e.lowerName.equalsIgnoreCase(value))
                 .findFirst();
         return arrangement.orElseThrow(

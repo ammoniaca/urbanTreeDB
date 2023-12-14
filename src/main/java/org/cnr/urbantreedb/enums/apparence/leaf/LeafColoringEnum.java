@@ -38,7 +38,7 @@ public enum LeafColoringEnum {
 
     @JsonCreator
     public static LeafColoringEnum of(String value) {
-        Optional<LeafColoringEnum> color = Arrays.stream(LeafColoringEnum.values())
+        Optional<LeafColoringEnum> color = Arrays.stream(values())
                 .filter(e -> e.lowerName.equalsIgnoreCase(value))
                 .findFirst();
         return color.orElseThrow(

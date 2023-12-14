@@ -41,7 +41,7 @@ public enum FoliageColoringEnum {
 
     @JsonCreator
     public static FoliageColoringEnum of(String value) {
-        Optional<FoliageColoringEnum> foliage = Arrays.stream(FoliageColoringEnum.values())
+        Optional<FoliageColoringEnum> foliage = Arrays.stream(values())
                 .filter(e -> e.lowerName.equalsIgnoreCase(value))
                 .findFirst();
         return foliage.orElseThrow(

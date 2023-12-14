@@ -3,7 +3,8 @@ package org.cnr.urbantreedb.entity.site;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
-import org.cnr.urbantreedb.enums.site.soil.*;
+import org.cnr.urbantreedb.enums.soil.SoilDepthCategoryEnum;
+import org.cnr.urbantreedb.enums.soil.SoilSubstrateTypologyEnum;
 
 @Entity
 public class SoilEntity {

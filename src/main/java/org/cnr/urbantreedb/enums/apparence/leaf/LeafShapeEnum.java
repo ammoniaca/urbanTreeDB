@@ -63,7 +63,7 @@ public enum LeafShapeEnum {
 
     @JsonCreator
     public static LeafShapeEnum of(String value) {
-        Optional<LeafShapeEnum> shape = Arrays.stream(LeafShapeEnum.values())
+        Optional<LeafShapeEnum> shape = Arrays.stream(values())
                 .filter(e -> e.lowerName.equalsIgnoreCase(value))
                 .findFirst();
         return shape.orElseThrow(

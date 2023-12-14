@@ -1,14 +1,14 @@
 package org.cnr.urbantreedb.dto.apparence;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
-import org.cnr.urbantreedb.enums.apparence.habitus.GrowthDirectionEnum;
+import org.cnr.urbantreedb.enums.apparence.growth.GrowthDirectionEnum;
 import org.cnr.urbantreedb.enums.apparence.habitus.HabitEnum;
+import org.cnr.urbantreedb.enums.likertscale.Point3ScaleLevelEnum;
 
 import java.util.Set;
 
@@ -27,38 +27,39 @@ public class GrowthDTO {
     @JsonProperty("direction")
     private Set<GrowthDirectionEnum> growthDirection;
 
-    @Min(value = 0)
-    @NotNull(message = "Maximum tree height cannot be empty.")
-    @JsonProperty("maximum_height")
-    private Double maximumTreeHeight;
 
-    @Min(value = 0)
+    @Max(value = 150, message = "The Theoretical maximum tree height is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
+    @Min(value = 1, message = "The Theoretical maximum tree height is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
+    @NotNull(message = "Theoretical maximum tree height cannot be empty.")
+    @JsonProperty("height")
+    private Double theoreticalMaximumTreeHeight;
+
+    /*@Min(value = 0)
     @NotNull(message = "Average tree height cannot be empty.")
     @JsonProperty("average_height")
-    private Double  averageTreeHeight;
+    private Double  averageTreeHeight;*/
 
-    @Min(value = 0)
-    @NotNull(message = "Maximum trunk diameter cannot be empty.")
-    @JsonProperty("maximum_trunk_diameter")
-    private Double maximumTrunkDiameter;
+    @Max(value = 30, message = "The Theoretical maximum trunk diameter is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
+    @Min(value = 0, message = "The Theoretical maximum trunk diameter is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
+    @NotNull(message = "Theoretical maximum trunk diameter cannot be empty.")
+    @JsonProperty("diameter")
+    private Double theoreticalMaximumTrunkDiameter;
 
-    @Min(value = 0)
+/*    @Min(value = 0)
     @NotNull(message = "Average trunk diameter cannot be empty.")
     @JsonProperty("average_trunk_diameter")
-    private Double averageTrunkDiameter;
+    private Double averageTrunkDiameter;*/
 
-    @JsonProperty("bark_thickness")
-    private Boolean isBarkThickness;
-
-    @NotNull(message = "Multi-stem development cannot be empty.")
-    @JsonProperty("multistem")
-    private Boolean isMultiStemDevelopment;
-
-    @Max(value = 10, message = "The growth speed is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
-    @Min(value = 0, message = "The growth speed is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
+    //@Max(value = 10, message = "The growth speed is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
+    //@Min(value = 0, message = "The growth speed is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
+    /**
+     * HIGH: pioneer species, annual height growth above 50 cm, year to mean height up to 25 years
+     * MEDIUM: intermediate species, annual height growth from 10 to 50 cm, year to mean height between 26 and 80 years
+     * SLOW : climax species, annual height growth below 10 cm, year to mean height above 81 years
+     */
     @NotNull(message = "Growth speed cannot be empty.")
     @JsonProperty("speed")
-    private Integer growthSpeedLevel;
+    private Point3ScaleLevelEnum growthSpeedLevel;
 
     @Max(value = 3, message = "The tree size class is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
     @Min(value = 1, message = "The tree size class is invalid. Allowed minimum of {value}, given: ${validatedValue}.")

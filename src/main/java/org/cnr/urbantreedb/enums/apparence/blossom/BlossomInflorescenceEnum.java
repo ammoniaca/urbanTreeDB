@@ -1,5 +1,14 @@
 package org.cnr.urbantreedb.enums.apparence.blossom;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import org.cnr.urbantreedb.enums.apparence.leaf.FoliageColoringEnum;
+import org.cnr.urbantreedb.exception.EnumArgumentNotValidException;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
 public enum BlossomInflorescenceEnum {
 
     EAR("ear"),
@@ -11,16 +20,42 @@ public enum BlossomInflorescenceEnum {
     RACEME("raceme"),
     PLEICHCHASIUM("pleichchasium"),
     CONE("cone"),
-    COMPOUNDED_UMBEL_EAR("compounded umbel or ear"),
+    COMPOUNDED_UMBEL_EAR("compounded"),
     CYMOID("cymoid"),
-    SIMPLE_INFLORESCENCES("simple inflorescences"),
-    IN_CLUSTERS("in clusters");
+    SIMPLE_INFLORESCENCES("inflorescences"),
+    IN_CLUSTERS("clusters");
 
-    public final String label;
+    public final String lowerName;
 
-    private BlossomInflorescenceEnum(String label) {
+    private BlossomInflorescenceEnum(String lowerName) {
 
-        this.label = label;
+        this.lowerName = lowerName;
+    }
+
+
+    @JsonValue
+    public String getLowerName() {
+        return lowerName;
+    }
+
+    private static String getErrorMessage(String value){
+        List<String> namesList = Arrays.stream(values())
+                .map(e -> valueOf(e.name()).lowerName)
+                .toList();
+        return "Unknown value: " +
+                value + ". Allowed values are: [" +
+                String.join(", ", namesList) +
+                "]";
+    }
+
+    @JsonCreator
+    public static BlossomInflorescenceEnum of(String value) {
+        Optional<BlossomInflorescenceEnum> label = Arrays.stream(values())
+                .filter(e -> e.lowerName.equalsIgnoreCase(value))
+                .findFirst();
+        return label.orElseThrow(
+                () -> new EnumArgumentNotValidException(getErrorMessage(value))
+        );
     }
 
 

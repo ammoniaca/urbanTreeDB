@@ -21,7 +21,7 @@ import java.util.Set;
 public class LeafEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "leaf_id", updatable = false, nullable = false)
     private Long leafId;
 

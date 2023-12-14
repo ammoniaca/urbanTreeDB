@@ -7,7 +7,7 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
-import org.cnr.urbantreedb.enums.site.soil.SoilSubstrateTypologyEnum;
+import org.cnr.urbantreedb.enums.soil.SoilSubstrateTypologyEnum;
 
 import java.util.Set;
 

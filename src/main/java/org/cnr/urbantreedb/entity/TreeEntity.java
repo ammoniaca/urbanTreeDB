@@ -2,7 +2,7 @@ package org.cnr.urbantreedb.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.cnr.urbantreedb.entity.apparence.LeafEntity;
+import org.cnr.urbantreedb.entity.apparence.*;
 import org.cnr.urbantreedb.entity.distribution.DistributionEntity;
 
 import java.time.OffsetDateTime;
@@ -65,6 +65,19 @@ public class TreeEntity {
     @JoinColumn(name = "fk_leaf_id")
     private LeafEntity leaf;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_crown_id")
+    private CrownEntity crown;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_blossom_id")
+    private BlossomEntity blossom;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_fruit_id")
+    private FruitEntity fruit;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_growth_id")
+    private GrowthEntity growth;
 }

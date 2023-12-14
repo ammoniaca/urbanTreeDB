@@ -6,8 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
-import org.cnr.urbantreedb.dto.apparence.BlossomDTO;
-import org.cnr.urbantreedb.dto.apparence.LeafDTO;
+import org.cnr.urbantreedb.dto.apparence.*;
 import org.cnr.urbantreedb.dto.distribution.DistributionDTO;
 
 import java.util.Set;
@@ -50,11 +49,28 @@ public class TreeRequestDTO {
     @JsonProperty("leaf")
     private LeafDTO leaf;
 
-    /*
+    @Valid
+    @NotNull(message = "Tree crown parameters cannot be empty.")
+    @JsonProperty("crown")
+    private CrownDTO crown;
+
     @Valid
     @NotNull(message = "Tree blossom parameters cannot be empty.")
     @JsonProperty("blossom")
-    private BlossomDTO blossomDTO;
+    private BlossomDTO blossom;
+
+    @Valid
+    @NotNull(message = "Tree fruit parameters cannot be empty.")
+    @JsonProperty("fruit")
+    private FruitDTO fruit;
+
+    @Valid
+    @NotNull(message = "Tree growth parameters cannot be empty.")
+    @JsonProperty("growth")
+    private GrowthDTO growth;
+
+    /*
+
 
 
     @Valid
@@ -62,10 +78,6 @@ public class TreeRequestDTO {
     @JsonProperty("fruit")
     private FruitDTO fruitDTO;
 
-    @Valid
-    @NotNull(message = "Tree crown parameters cannot be empty.")
-    @JsonProperty("crown")
-    private CrownDTO crownDTO;
 
 
 

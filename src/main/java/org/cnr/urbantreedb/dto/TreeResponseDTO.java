@@ -2,6 +2,8 @@ package org.cnr.urbantreedb.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
+import org.cnr.urbantreedb.dto.apparence.BlossomDTO;
+import org.cnr.urbantreedb.dto.apparence.CrownDTO;
 import org.cnr.urbantreedb.dto.apparence.LeafDTO;
 import org.cnr.urbantreedb.dto.distribution.DistributionDTO;
 
@@ -44,5 +46,11 @@ public class TreeResponseDTO {
 
     @JsonProperty("leaf")
     private LeafDTO leaf;
+
+    @JsonProperty("crown")
+    private CrownDTO crown;
+
+    @JsonProperty("blossom")
+    private BlossomDTO blossom;
 
 }

@@ -1,34 +1,32 @@
-package org.cnr.urbantreedb.enums.apparence.leaf;
+package org.cnr.urbantreedb.enums.apparence.growth;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+import org.cnr.urbantreedb.enums.apparence.fruit.FruitColorEnum;
 import org.cnr.urbantreedb.exception.EnumArgumentNotValidException;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-public enum LeafMarginEnum {
+public enum GrowthDirectionEnum {
 
-    CILIATE("ciliate"),
-    CRENATE("crenate"),
-    DENTATE("dentate"),
-    DENTICULATE("denticulate"),
-    DOUBLY_SERRATE("doubly-serrate"),
-    ENTIRE("entire"),
-    LOBATE("lobate"),
-    SERRATE("serrate"),
-    SERRULATE("serrulate"),
-    SINUATE("sinuate"),
-    SPINY("spiny"),
-    UNDULATE("undulate");
+    UPRIGHT("upright"),
+    SQUARROSE("squarrose"),
+    OVERHANGING("overhanging"),
+    CORKSCREW_LIKE("corkscrew-like"),
+    TWISTED("twisted"),
+    CLIMBING("climbing"),
+    GROUND_LYING("ground-lying"),
+    CREEPING("creeping");
 
     public final String lowerName;
 
-    private LeafMarginEnum(String label) {
+    private GrowthDirectionEnum(String lowerName) {
 
-        this.lowerName = label;
+        this.lowerName = lowerName;
     }
+
 
     @JsonValue
     public String getLowerName() {
@@ -46,15 +44,13 @@ public enum LeafMarginEnum {
     }
 
     @JsonCreator
-    public static LeafMarginEnum of(String value) {
-        Optional<LeafMarginEnum> margin = Arrays.stream(values())
+    public static GrowthDirectionEnum of(String value) {
+        Optional<GrowthDirectionEnum> label = Arrays.stream(values())
                 .filter(e -> e.lowerName.equalsIgnoreCase(value))
                 .findFirst();
-        return margin.orElseThrow(
+        return label.orElseThrow(
                 () -> new EnumArgumentNotValidException(getErrorMessage(value))
         );
     }
-
-
 
 }
