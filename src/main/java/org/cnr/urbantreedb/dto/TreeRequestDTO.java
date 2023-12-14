@@ -34,14 +34,14 @@ public class TreeRequestDTO {
     @JsonProperty("infraname")
     private String infraname;
 
-    @NotEmpty(message = "Tree common name(s) cannot be empty.")
+    //@NotEmpty(message = "Tree common name(s) cannot be empty.")
     @JsonProperty("common_name")
     private Set<String> commonName;
 
     //TODO Infraname (subspecies (spp), variety (var), cultivar (cv), and hybrid)  ‘spp.’ or ‘var.’
 
     @Valid
-    @NotNull(message = "Tree distribution parameters cannot be empty.")
+    //@NotNull(message = "Tree distribution parameters cannot be empty.")
     @JsonProperty("distribution")
     private DistributionDTO distribution;
 
