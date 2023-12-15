@@ -53,4 +53,10 @@ public class TreeService {
         return treeResponseDTO;
     }
 
+    private String getBinomailName(TreeEntity tree){
+
+        return "";
+    }
+
+
 }

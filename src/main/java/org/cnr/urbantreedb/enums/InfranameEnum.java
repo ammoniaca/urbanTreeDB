@@ -1,7 +1,6 @@
 package org.cnr.urbantreedb.enums;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
 import org.cnr.urbantreedb.exception.EnumArgumentNotValidException;
 import org.springframework.data.util.StreamUtils;
 
@@ -9,37 +8,21 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-public enum MonthEnum {
+public enum InfranameEnum {
 
-    JAN("January"),
-    FEB("February"),
-    MAR("March"),
-    APR("April"),
-    MAY("May"),
-    JUN("June"),
-    JUL("July"),
-    AUG("August"),
-    SEP("September"),
-    OCT("October"),
-    NOV("November"),
-    DEC("December");
-
+    SSP("subspecies"),
+    VAR("variety"),
+    CV("cultivar"),
+    X("hybrid");
 
     public final String fullName;
 
 
-    private MonthEnum(
+    private InfranameEnum(
             String fullName
     ) {
 
         this.fullName = fullName;
-    }
-
-
-    @JsonValue
-    public String getFullName() {
-
-        return fullName;
     }
 
     private static String getErrorMessage(String value){
@@ -62,13 +45,15 @@ public enum MonthEnum {
     }
 
     @JsonCreator
-    public static MonthEnum from(String value) {
-        Optional<MonthEnum> label = Arrays.stream(values())
+    public static InfranameEnum from(String value) {
+        Optional<InfranameEnum> label = Arrays.stream(values())
                 .filter(e -> e.name().equalsIgnoreCase(value))
                 .findFirst();
         return label.orElseThrow(
                 () -> new EnumArgumentNotValidException(getErrorMessage(value))
         );
     }
+
+
 
 }

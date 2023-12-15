@@ -1,10 +1,7 @@
 package org.cnr.urbantreedb.dto.apparence;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.*;
 import lombok.*;
 import org.cnr.urbantreedb.enums.apparence.growth.GrowthDirectionEnum;
 import org.cnr.urbantreedb.enums.apparence.habitus.HabitEnum;
@@ -27,7 +24,6 @@ public class GrowthDTO {
     @JsonProperty("direction")
     private Set<GrowthDirectionEnum> growthDirection;
 
-
     @Max(value = 150, message = "The Theoretical maximum tree height is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
     @Min(value = 1, message = "The Theoretical maximum tree height is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
     @NotNull(message = "Theoretical maximum tree height cannot be empty.")
@@ -39,8 +35,8 @@ public class GrowthDTO {
     @JsonProperty("average_height")
     private Double  averageTreeHeight;*/
 
-    @Max(value = 30, message = "The Theoretical maximum trunk diameter is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
-    @Min(value = 0, message = "The Theoretical maximum trunk diameter is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
+    @DecimalMin(value = "30.0", message = "The Theoretical maximum trunk diameter is invalid. Allowed maximum of {value}, given: ${validatedValue}.")
+    @DecimalMin(value = "0.1", message = "The Theoretical maximum trunk diameter is invalid. Allowed minimum of {value}, given: ${validatedValue}.")
     @NotNull(message = "Theoretical maximum trunk diameter cannot be empty.")
     @JsonProperty("diameter")
     private Double theoreticalMaximumTrunkDiameter;
